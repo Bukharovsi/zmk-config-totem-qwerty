@@ -53,13 +53,6 @@
     tapping-term-ms = <170>;
 };
 
-escOrTab: escOrTab {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&kp ESC>, <&kp TAB>;
-    mods = <(MOD_LSFT)>;
-};
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -206,6 +199,13 @@ escOrTab: escOrTab {
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
+        };
+
+        escOrTab: escOrTab {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp TAB>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
